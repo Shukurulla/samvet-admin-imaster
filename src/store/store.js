@@ -52,7 +52,7 @@ export const { setCredentials, updateToken, setUser, logout } =
 // Base query with auto token refresh
 const baseQueryWithReauth = async (args, api, extraOptions) => {
   const baseQuery = fetchBaseQuery({
-    baseUrl: "https://server.kerek.uz/",
+    baseUrl: "https://imaster.kerek.uz/",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.accessToken;
       if (token) {
@@ -140,7 +140,7 @@ export const startTokenRefresh = () => {
     if (refreshToken) {
       try {
         const response = await fetch(
-          "https://server.kerek.uz/user/login/refresh/",
+          "https://imaster.kerek.uz/user/login/refresh/",
           {
             method: "POST",
             headers: {
